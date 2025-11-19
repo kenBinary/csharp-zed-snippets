@@ -29,6 +29,18 @@
     ],
     "description": "Create an async method"
   },
+  "Interface Method": {
+    "prefix": "imethod",
+    "body": ["${1:void} ${2:MethodName}($3);$0"],
+    "description": "Create an interface method"
+  },
+  "Interface Async Method": {
+    "prefix": "imethod_async",
+    "body": [
+      "Task${1:<${2:T}>} ${3:MethodName}Async($4, CancellationToken cancellationToken = default);$0"
+    ],
+    "description": "Create an interface async method"
+  },
   "Constructor": {
     "prefix": "ctor",
     "body": ["public ${1:ClassName}($2)", "{", "\t$0", "}"],
