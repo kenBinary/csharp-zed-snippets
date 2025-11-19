@@ -1,0 +1,688 @@
+{
+  "C# Class": {
+    "prefix": "bp_class",
+    "body": [
+      "namespace ${1:Namespace}",
+      "{",
+      "    public class ${2:ClassName}",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# class"
+  },
+  "C# Interface": {
+    "prefix": "bp_interface",
+    "body": [
+      "namespace ${1:Namespace}",
+      "{",
+      "    public interface ${2:InterfaceName}",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# interface"
+  },
+  "C# Struct": {
+    "prefix": "bp_struct",
+    "body": [
+      "namespace ${1:Namespace}",
+      "{",
+      "    public struct ${2:StructName}",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# struct"
+  },
+  "C# Enum": {
+    "prefix": "bp_enum",
+    "body": [
+      "namespace ${1:Namespace}",
+      "{",
+      "    public enum ${2:EnumName}",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# enum"
+  },
+  "C# API Controller": {
+    "prefix": "bp_apicontroller",
+    "body": [
+      "using Microsoft.AspNetCore.Mvc;",
+      "",
+      "namespace ${1:Namespace}",
+      "{",
+      "    [ApiController]",
+      "    [Route(\"api/[controller]\")]",
+      "    public class ${2:NewApiController} : ControllerBase",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# API Controller"
+  },
+  "C# MVC Controller": {
+    "prefix": "bp_controller",
+    "body": [
+      "using System;",
+      "using System.Collections.Generic;",
+      "using System.Diagnostics;",
+      "using System.Linq;",
+      "using System.Threading.Tasks;",
+      "using Microsoft.AspNetCore.Mvc;",
+      "using Microsoft.Extensions.Logging;",
+      "",
+      "namespace ${1:Namespace}",
+      "{",
+      "    [Route(\"[controller]\")]",
+      "    public class ${2:NewController} : Controller",
+      "    {",
+      "        private readonly ILogger<${2:NewController}> _logger;",
+      "",
+      "        public ${2:NewController}(ILogger<${2:NewController}> logger)",
+      "        {",
+      "            _logger = logger;",
+      "        }",
+      "",
+      "        public IActionResult Index()",
+      "        {",
+      "            return View();",
+      "        }",
+      "",
+      "        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]",
+      "        public IActionResult Error()",
+      "        {",
+      "            return View(\"Error!\");",
+      "        }",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# MVC Controller"
+  },
+  "Razor Page": {
+    "prefix": "bp_razorpage",
+    "body": [
+      "@page",
+      "@model ${1:Namespace}.${2:PageName}Model",
+      "@{",
+      "    ViewData[\"Title\"] = \"${2:PageName}\";",
+      "}",
+      "",
+      "<h1>@ViewData[\"Title\"]</h1>",
+      "",
+      "<div>",
+      "    $0",
+      "</div>"
+    ],
+    "description": "Boilerplate for a new Razor Page"
+  },
+  "C# Razor PageModel": {
+    "prefix": "bp_pagemodel",
+    "body": [
+      "using Microsoft.AspNetCore.Mvc.RazorPages;",
+      "using Microsoft.Extensions.Logging;",
+      "",
+      "namespace ${1:Namespace}",
+      "{",
+      "    public class ${2:PageName}Model : PageModel",
+      "    {",
+      "        private readonly ILogger<${2:PageName}Model> _logger;",
+      "",
+      "        public ${2:PageName}Model(ILogger<${2:PageName}Model> logger)",
+      "        {",
+      "            _logger = logger;",
+      "        }",
+      "",
+      "        public void OnGet()",
+      "        {",
+      "            $0",
+      "        }",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# Razor PageModel"
+  },
+  "MSTest Class": {
+    "prefix": "msclass",
+    "body": [
+      "[TestClass]",
+      "public class ${1:SystemUnderTests}",
+      "{",
+      "\t[TestInitialize]",
+      "\tpublic void Initialize()",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "MSTest class with TestInitialize"
+  },
+  "NUnit Class": {
+    "prefix": "nclass",
+    "body": [
+      "[TestFixture]",
+      "public class ${1:SystemUnderTests}",
+      "{",
+      "\t[SetUp]",
+      "\tpublic void Setup()",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "NUnit test class with SetUp"
+  },
+  "xUnit Class": {
+    "prefix": "xclass",
+    "body": [
+      "public class ${1:SystemUnderTests}",
+      "{",
+      "\tprivate readonly ${2:Service} _sut;",
+      "",
+      "\tpublic $1()",
+      "\t{",
+      "\t\t// Setup",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Basic xUnit test class with constructor setup"
+  },
+  "Class": {
+    "prefix": "class",
+    "body": ["public class ${1:ClassName}", "{", "\t$0", "}"],
+    "description": "Create a new class"
+  },
+  "Record": {
+    "prefix": "record",
+    "body": ["public record ${1:MyRecord}(${2:string} ${3:PropertyName});"],
+    "description": "Creates a C# record declaration."
+  },
+  "Interface": {
+    "prefix": "interface",
+    "body": ["public interface ${1:IInterfaceName}", "{", "\t$0", "}"],
+    "description": "Create a new interface"
+  },
+  "Method": {
+    "prefix": "method",
+    "body": ["${1:public} ${2:void} ${3:MethodName}($4)", "{", "\t$0", "}"],
+    "description": "Create a method"
+  },
+  "Async Method": {
+    "prefix": "method_async",
+    "body": [
+      "${1:public} async Task${2:<${3:T}>} ${4:MethodName}($5)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Create an async method"
+  },
+  "Constructor": {
+    "prefix": "ctor",
+    "body": ["public ${1:ClassName}($2)", "{", "\t$0", "}"],
+    "description": "Create a constructor"
+  },
+  "Property": {
+    "prefix": "prop",
+    "body": ["public ${1:int} ${2:PropertyName} { get; set; }$0"],
+    "description": "Create an auto-property"
+  },
+  "Property with backing field": {
+    "prefix": "propfull",
+    "body": [
+      "private ${1:int} ${2:_fieldName};",
+      "public ${1:int} ${3:PropertyName}",
+      "{",
+      "\t\tget { return ${2:_fieldName}; }",
+      "\t\tset { ${2:_fieldName} = value; }",
+      "}$0"
+    ],
+    "description": "Create a property with backing field"
+  },
+  "Read-only Property": {
+    "prefix": "propread",
+    "body": ["public ${1:int} ${2:PropertyName} { get; }$0"],
+    "description": "Create a read-only auto-property"
+  },
+  "Property with private setter": {
+    "prefix": "propprivate",
+    "body": ["public ${1:int} ${2:PropertyName} { get; private set; }$0"],
+    "description": "Create a property with private setter"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (int ${1:i} = 0; ${1:i} < ${2:length}; ${1:i}++)",
+      "{",
+      "\t\t$0",
+      "}"
+    ],
+    "description": "Create a for loop"
+  },
+  "Foreach Loop": {
+    "prefix": "foreach",
+    "body": [
+      "foreach (${1:var} ${2:item} in ${3:collection})",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Create a foreach loop"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": ["while (${1:condition})", "{", "\t$0", "}"],
+    "description": "Create a while loop"
+  },
+  "Do While Loop": {
+    "prefix": "dowhile",
+    "body": ["do", "{", "\t\t$0", "} while (${1:condition});"],
+    "description": "Create a do-while loop"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": ["if (${1:condition})", "{", "\t\t\t$0", "}"],
+    "description": "Create an if statement"
+  },
+  "Else-If Statement": {
+    "prefix": "elseif",
+    "body": [
+      "if (${1:condition})",
+      "{",
+      "\t\t\t$3",
+      "}",
+      "else if (${2})",
+      "{",
+      "\t\t\t$4",
+      "}",
+      "else",
+      "{",
+      "\t\t\t$0",
+      "}"
+    ],
+    "description": "Create an else-if statement"
+  },
+  "If-Else Statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if (${1:condition})",
+      "{",
+      "\t\t\t$2",
+      "}",
+      "else",
+      "{",
+      "\t\t\t$0",
+      "}"
+    ],
+    "description": "Create an if-else statement"
+  },
+  "Switch Statement": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expression})",
+      "{",
+      "\t\t\tcase ${2:value}:",
+      "\t\t\t\t$3",
+      "\t\t\t\tbreak;",
+      "\t\t\tdefault:",
+      "\t\t\t\t$0",
+      "\t\t\t\tbreak;",
+      "}"
+    ],
+    "description": "Create a switch statement"
+  },
+  "Try-Catch": {
+    "prefix": "try",
+    "body": [
+      "try",
+      "{",
+      "\t\t\t$1",
+      "}",
+      "catch (${2:Exception} ${3:ex})",
+      "{",
+      "\t\t\t$0",
+      "}"
+    ],
+    "description": "Create a try-catch block"
+  },
+  "Try-Catch-Finally": {
+    "prefix": "tryf",
+    "body": [
+      "try",
+      "{",
+      "\t\t\t$1",
+      "}",
+      "catch (${2:Exception} ${3:ex})",
+      "{",
+      "\t\t\t$4",
+      "}",
+      "finally",
+      "{",
+      "\t\t\t$0",
+      "}"
+    ],
+    "description": "Create a try-catch-finally block"
+  },
+  "Using Statement": {
+    "prefix": "using",
+    "body": [
+      "using (${1:var} ${2:resource} = ${3:new Resource()})",
+      "{",
+      "\t\t$0",
+      "}"
+    ],
+    "description": "Create a using statement"
+  },
+  "Namespace": {
+    "prefix": "namespace",
+    "body": ["namespace ${1:MyNamespace}", "{", "\t$0", "}"],
+    "description": "Create a namespace"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "public enum ${1:EnumName}",
+      "{",
+      "\t${2:Value1},",
+      "\t${3:Value2}$0",
+      "}"
+    ],
+    "description": "Create an enum"
+  },
+  "Struct": {
+    "prefix": "struct",
+    "body": ["public struct ${1:StructName}", "{", "\t$0", "}"],
+    "description": "Create a struct"
+  },
+  "Static Class": {
+    "prefix": "static",
+    "body": ["public static class ${1:ClassName}", "{", "\t$0", "}"],
+    "description": "Create a static class"
+  },
+  "Abstract Class": {
+    "prefix": "abstract",
+    "body": ["public abstract class ${1:ClassName}", "{", "\t$0", "}"],
+    "description": "Create an abstract class"
+  },
+  "Console WriteLine": {
+    "prefix": "cw",
+    "body": ["Console.WriteLine(${1:\"Hello, World!\"});$0"],
+    "description": "Console.WriteLine"
+  },
+  "Throw Exception": {
+    "prefix": "throw",
+    "body": ["throw new ${1:Exception}(${2:\"message\"});$0"],
+    "description": "Throw an exception"
+  },
+  "Ternary Operator": {
+    "prefix": "ternary",
+    "body": ["${1:condition} ? ${2:trueValue} : ${3:falseValue}$0"],
+    "description": "Ternary conditional operator"
+  },
+  "xUnit Fact": {
+    "prefix": "fact",
+    "body": [
+      "[Fact]",
+      "public void ${1:MethodName}_Should${2:ExpectedBehavior}_When${3:State}()",
+      "{",
+      "\t// Arrange",
+      "\t$4",
+      "",
+      "\t// Act",
+      "\t$5",
+      "",
+      "\t// Assert",
+      "\t$0",
+      "}"
+    ],
+    "description": "xUnit [Fact] test method with AAA pattern"
+  },
+  "xUnit Async Fact": {
+    "prefix": "facta",
+    "body": [
+      "[Fact]",
+      "public async Task ${1:MethodName}_Should${2:ExpectedBehavior}_When${3:State}()",
+      "{",
+      "\t// Arrange",
+      "\t$4",
+      "",
+      "\t// Act",
+      "\tawait $5",
+      "",
+      "\t// Assert",
+      "\t$0",
+      "}"
+    ],
+    "description": "xUnit async [Fact] test method"
+  },
+  "xUnit Theory": {
+    "prefix": "theory",
+    "body": [
+      "[Theory]",
+      "[InlineData(${1:data})]",
+      "public void ${2:MethodName}_Should${3:ExpectedBehavior}(${4:type} ${5:param})",
+      "{",
+      "\t// Arrange",
+      "\t$6",
+      "",
+      "\t// Act",
+      "\t$7",
+      "",
+      "\t// Assert",
+      "\t$0",
+      "}"
+    ],
+    "description": "xUnit [Theory] with InlineData"
+  },
+  "NUnit Test": {
+    "prefix": "ntest",
+    "body": [
+      "[Test]",
+      "public void ${1:MethodName}_Should${2:ExpectedBehavior}_When${3:State}()",
+      "{",
+      "\t// Arrange",
+      "\t$4",
+      "",
+      "\t// Act",
+      "\t$5",
+      "",
+      "\t// Assert",
+      "\tAssert.$0",
+      "}"
+    ],
+    "description": "NUnit [Test] method with AAA pattern"
+  },
+  "NUnit TestCase": {
+    "prefix": "ncase",
+    "body": [
+      "[TestCase(${1:data})]",
+      "public void ${2:MethodName}_Should${3:ExpectedBehavior}(${4:type} ${5:param})",
+      "{",
+      "\t// Arrange",
+      "\t$6",
+      "",
+      "\t// Act",
+      "\t$7",
+      "",
+      "\t// Assert",
+      "\t$0",
+      "}"
+    ],
+    "description": "NUnit [TestCase] method"
+  },
+  "MSTest Method": {
+    "prefix": "mstest",
+    "body": [
+      "[TestMethod]",
+      "public void ${1:MethodName}_Should${2:ExpectedBehavior}_When${3:State}()",
+      "{",
+      "\t// Arrange",
+      "\t$4",
+      "",
+      "\t// Act",
+      "\t$5",
+      "",
+      "\t// Assert",
+      "\tAssert.$0",
+      "}"
+    ],
+    "description": "MSTest [TestMethod] with AAA pattern"
+  },
+  "Create Mock": {
+    "prefix": "mock",
+    "body": ["var ${1:mockName} = new Mock<${2:Interface}>();", "$0"],
+    "description": "Creates a new Moq instance"
+  },
+  "Mock Setup Returns": {
+    "prefix": "msetup",
+    "body": [
+      "${1:mockName}.Setup(x => x.${2:Method}(${3:It.IsAny<Type>()}))",
+      "\t.Returns(${4:value});$0"
+    ],
+    "description": "Configures a Mock to return a value"
+  },
+  "Mock Setup Async Returns": {
+    "prefix": "msetupa",
+    "body": [
+      "${1:mockName}.Setup(x => x.${2:Method}(${3:It.IsAny<Type>()}))",
+      "\t.ReturnsAsync(${4:value});$0"
+    ],
+    "description": "Configures a Mock to return an async value"
+  },
+  "Mock Verify": {
+    "prefix": "mverify",
+    "body": [
+      "${1:mockName}.Verify(x => x.${2:Method}(${3:It.IsAny<Type>()}), Times.${4:Once});$0"
+    ],
+    "description": "Verifies a method was called on the Mock"
+  },
+  "HTTP GET Action": {
+    "prefix": "httpget",
+    "body": [
+      "[HttpGet(\"{id}\")]",
+      "public IActionResult GetById(${1:int} id)",
+      "{",
+      "    throw new NotImplementedException();",
+      "}"
+    ],
+    "description": "Creates an HTTP GET action method."
+  },
+  "HTTP POST Action": {
+    "prefix": "httppost",
+    "body": [
+      "[HttpPost]",
+      "public IActionResult Post([FromBody] ${1:MyModel} model)",
+      "{",
+      "    throw new NotImplementedException();",
+      "}"
+    ],
+    "description": "Creates an HTTP POST action method."
+  },
+  "HTTP PUT Action": {
+    "prefix": "httpput",
+    "body": [
+      "[HttpPut(\"{id}\")]",
+      "public IActionResult Put(${1:int} id, [FromBody] ${2:MyModel} model)",
+      "{",
+      "    throw new NotImplementedException();",
+      "}"
+    ],
+    "description": "Creates an HTTP PUT action method."
+  },
+  "HTTP DELETE Action": {
+    "prefix": "httpdelete",
+    "body": [
+      "[HttpDelete(\"{id}\")]",
+      "public IActionResult Delete(${1:int} id)",
+      "{",
+      "    throw new NotImplementedException();",
+      "}"
+    ],
+    "description": "Creates an HTTP DELETE action method."
+  },
+  "Dependency Injection - Constructor": {
+    "prefix": "ctordepi",
+    "body": [
+      "private readonly ${1:IService} _${2:service};",
+      "",
+      "public ${3:MyClass}(${1:IService} ${2:service})",
+      "{",
+      "    _${2:service} = ${2:service};",
+      "}"
+    ],
+    "description": "Creates a constructor with dependency injection."
+  },
+  "Map Minimal API Endpoint": {
+    "prefix": "mapget",
+    "body": [
+      "app.MapGet(\"/${1:myendpoint}\", () =>",
+      "{",
+      "    throw new NotImplementedException();",
+      "});"
+    ],
+    "description": "Creates a minimal API GET endpoint in Program.cs."
+  },
+  "Map Minimal API POST": {
+    "prefix": "mappost",
+    "body": [
+      "app.MapPost(\"/${1:myendpoint}\", (${2:MyModel} model) =>",
+      "{",
+      "    throw new NotImplementedException();",
+      "});"
+    ],
+    "description": "Creates a minimal API POST endpoint."
+  },
+  "Map Minimal API PUT": {
+    "prefix": "mapput",
+    "body": [
+      "app.MapPut(\"/${1:myendpoint}/{id}\", (int id, ${2:MyModel} inputModel) =>",
+      "{",
+      "    throw new NotImplementedException();",
+      "});"
+    ],
+    "description": "Creates a minimal API PUT endpoint."
+  },
+  "Map Minimal API DELETE": {
+    "prefix": "mapdelete",
+    "body": [
+      "app.MapDelete(\"/${1:myendpoint}/{id}\", (int id) =>",
+      "{",
+      "    throw new NotImplementedException();",
+      "});"
+    ],
+    "description": "Creates a minimal API DELETE endpoint."
+  },
+  "Map Minimal API GET with DI": {
+    "prefix": "mapgetdi",
+    "body": [
+      "app.MapGet(\"/${1:myendpoint}\", async (${2:IMyService} service) =>",
+      "{",
+      "    throw new NotImplementedException();",
+      "});"
+    ],
+    "description": "Creates a minimal API GET endpoint with dependency injection."
+  },
+  "Register Scoped Service": {
+    "prefix": "addscoped",
+    "body": ["builder.Services.AddScoped<${1:IService}, ${2:Service}>();"],
+    "description": "Registers a scoped service in Program.cs."
+  },
+  "Register Singleton Service": {
+    "prefix": "addsingleton",
+    "body": ["builder.Services.AddSingleton<${1:IService}, ${2:Service}>();"],
+    "description": "Registers a singleton service in Program.cs."
+  },
+  "Register Transient Service": {
+    "prefix": "addtransient",
+    "body": ["builder.Services.AddTransient<${1:IService}, ${2:Service}>();"],
+    "description": "Registers a transient service in Program.cs."
+  }
+}

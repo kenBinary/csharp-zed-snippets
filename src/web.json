@@ -1,0 +1,123 @@
+{
+  "HTTP GET Action": {
+    "prefix": "httpget",
+    "body": [
+      "[HttpGet(\"{id}\")]",
+      "public IActionResult GetById(${1:int} id)",
+      "{",
+      "    throw new NotImplementedException();",
+      "}"
+    ],
+    "description": "Creates an HTTP GET action method."
+  },
+  "HTTP POST Action": {
+    "prefix": "httppost",
+    "body": [
+      "[HttpPost]",
+      "public IActionResult Post([FromBody] ${1:MyModel} model)",
+      "{",
+      "    throw new NotImplementedException();",
+      "}"
+    ],
+    "description": "Creates an HTTP POST action method."
+  },
+  "HTTP PUT Action": {
+    "prefix": "httpput",
+    "body": [
+      "[HttpPut(\"{id}\")]",
+      "public IActionResult Put(${1:int} id, [FromBody] ${2:MyModel} model)",
+      "{",
+      "    throw new NotImplementedException();",
+      "}"
+    ],
+    "description": "Creates an HTTP PUT action method."
+  },
+  "HTTP DELETE Action": {
+    "prefix": "httpdelete",
+    "body": [
+      "[HttpDelete(\"{id}\")]",
+      "public IActionResult Delete(${1:int} id)",
+      "{",
+      "    throw new NotImplementedException();",
+      "}"
+    ],
+    "description": "Creates an HTTP DELETE action method."
+  },
+  "Dependency Injection - Constructor": {
+    "prefix": "ctordepi",
+    "body": [
+      "private readonly ${1:IService} _${2:service};",
+      "",
+      "public ${3:MyClass}(${1:IService} ${2:service})",
+      "{",
+      "    _${2:service} = ${2:service};",
+      "}"
+    ],
+    "description": "Creates a constructor with dependency injection."
+  },
+  "Map Minimal API Endpoint": {
+    "prefix": "mapget",
+    "body": [
+      "app.MapGet(\"/${1:myendpoint}\", () =>",
+      "{",
+      "    throw new NotImplementedException();",
+      "});"
+    ],
+    "description": "Creates a minimal API GET endpoint in Program.cs."
+  },
+  "Map Minimal API POST": {
+    "prefix": "mappost",
+    "body": [
+      "app.MapPost(\"/${1:myendpoint}\", (${2:MyModel} model) =>",
+      "{",
+      "    throw new NotImplementedException();",
+      "});"
+    ],
+    "description": "Creates a minimal API POST endpoint."
+  },
+  "Map Minimal API PUT": {
+    "prefix": "mapput",
+    "body": [
+      "app.MapPut(\"/${1:myendpoint}/{id}\", (int id, ${2:MyModel} inputModel) =>",
+      "{",
+      "    throw new NotImplementedException();",
+      "});"
+    ],
+    "description": "Creates a minimal API PUT endpoint."
+  },
+  "Map Minimal API DELETE": {
+    "prefix": "mapdelete",
+    "body": [
+      "app.MapDelete(\"/${1:myendpoint}/{id}\", (int id) =>",
+      "{",
+      "    throw new NotImplementedException();",
+      "});"
+    ],
+    "description": "Creates a minimal API DELETE endpoint."
+  },
+  "Map Minimal API GET with DI": {
+    "prefix": "mapgetdi",
+    "body": [
+      "app.MapGet(\"/${1:myendpoint}\", async (${2:IMyService} service) =>",
+      "{",
+      "    throw new NotImplementedException();",
+      "});"
+    ],
+    "description": "Creates a minimal API GET endpoint with dependency injection."
+  },
+  "Register Scoped Service": {
+    "prefix": "addscoped",
+    "body": ["builder.Services.AddScoped<${1:IService}, ${2:Service}>();"],
+    "description": "Registers a scoped service in Program.cs."
+  },
+  "Register Singleton Service": {
+    "prefix": "addsingleton",
+    "body": ["builder.Services.AddSingleton<${1:IService}, ${2:Service}>();"],
+    "description": "Registers a singleton service in Program.cs."
+  },
+  "Register Transient Service": {
+    "prefix": "addtransient",
+    "body": ["builder.Services.AddTransient<${1:IService}, ${2:Service}>();"],
+    "description": "Registers a transient service in Program.cs."
+  }
+}

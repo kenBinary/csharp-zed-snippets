@@ -1,0 +1,185 @@
+{
+  "xUnit Class": {
+    "prefix": "xclass",
+    "body": [
+      "public class ${1:SystemUnderTests}",
+      "{",
+      "\tprivate readonly ${2:Service} _sut;",
+      "",
+      "\tpublic $1()",
+      "\t{",
+      "\t\t// Setup",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Basic xUnit test class with constructor setup"
+  },
+  "xUnit Fact": {
+    "prefix": "fact",
+    "body": [
+      "[Fact]",
+      "public void ${1:MethodName}_Should${2:ExpectedBehavior}_When${3:State}()",
+      "{",
+      "\t// Arrange",
+      "\t$4",
+      "",
+      "\t// Act",
+      "\t$5",
+      "",
+      "\t// Assert",
+      "\t$0",
+      "}"
+    ],
+    "description": "xUnit [Fact] test method with AAA pattern"
+  },
+  "xUnit Async Fact": {
+    "prefix": "facta",
+    "body": [
+      "[Fact]",
+      "public async Task ${1:MethodName}_Should${2:ExpectedBehavior}_When${3:State}()",
+      "{",
+      "\t// Arrange",
+      "\t$4",
+      "",
+      "\t// Act",
+      "\tawait $5",
+      "",
+      "\t// Assert",
+      "\t$0",
+      "}"
+    ],
+    "description": "xUnit async [Fact] test method"
+  },
+  "xUnit Theory": {
+    "prefix": "theory",
+    "body": [
+      "[Theory]",
+      "[InlineData(${1:data})]",
+      "public void ${2:MethodName}_Should${3:ExpectedBehavior}(${4:type} ${5:param})",
+      "{",
+      "\t// Arrange",
+      "\t$6",
+      "",
+      "\t// Act",
+      "\t$7",
+      "",
+      "\t// Assert",
+      "\t$0",
+      "}"
+    ],
+    "description": "xUnit [Theory] with InlineData"
+  },
+  "NUnit Class": {
+    "prefix": "nclass",
+    "body": [
+      "[TestFixture]",
+      "public class ${1:SystemUnderTests}",
+      "{",
+      "\t[SetUp]",
+      "\tpublic void Setup()",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "NUnit test class with SetUp"
+  },
+  "NUnit Test": {
+    "prefix": "ntest",
+    "body": [
+      "[Test]",
+      "public void ${1:MethodName}_Should${2:ExpectedBehavior}_When${3:State}()",
+      "{",
+      "\t// Arrange",
+      "\t$4",
+      "",
+      "\t// Act",
+      "\t$5",
+      "",
+      "\t// Assert",
+      "\tAssert.$0",
+      "}"
+    ],
+    "description": "NUnit [Test] method with AAA pattern"
+  },
+  "NUnit TestCase": {
+    "prefix": "ncase",
+    "body": [
+      "[TestCase(${1:data})]",
+      "public void ${2:MethodName}_Should${3:ExpectedBehavior}(${4:type} ${5:param})",
+      "{",
+      "\t// Arrange",
+      "\t$6",
+      "",
+      "\t// Act",
+      "\t$7",
+      "",
+      "\t// Assert",
+      "\t$0",
+      "}"
+    ],
+    "description": "NUnit [TestCase] method"
+  },
+  "MSTest Class": {
+    "prefix": "msclass",
+    "body": [
+      "[TestClass]",
+      "public class ${1:SystemUnderTests}",
+      "{",
+      "\t[TestInitialize]",
+      "\tpublic void Initialize()",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "MSTest class with TestInitialize"
+  },
+  "MSTest Method": {
+    "prefix": "mstest",
+    "body": [
+      "[TestMethod]",
+      "public void ${1:MethodName}_Should${2:ExpectedBehavior}_When${3:State}()",
+      "{",
+      "\t// Arrange",
+      "\t$4",
+      "",
+      "\t// Act",
+      "\t$5",
+      "",
+      "\t// Assert",
+      "\tAssert.$0",
+      "}"
+    ],
+    "description": "MSTest [TestMethod] with AAA pattern"
+  },
+  "Create Mock": {
+    "prefix": "mock",
+    "body": ["var ${1:mockName} = new Mock<${2:Interface}>();", "$0"],
+    "description": "Creates a new Moq instance"
+  },
+  "Mock Setup Returns": {
+    "prefix": "msetup",
+    "body": [
+      "${1:mockName}.Setup(x => x.${2:Method}(${3:It.IsAny<Type>()}))",
+      "\t.Returns(${4:value});$0"
+    ],
+    "description": "Configures a Mock to return a value"
+  },
+  "Mock Setup Async Returns": {
+    "prefix": "msetupa",
+    "body": [
+      "${1:mockName}.Setup(x => x.${2:Method}(${3:It.IsAny<Type>()}))",
+      "\t.ReturnsAsync(${4:value});$0"
+    ],
+    "description": "Configures a Mock to return an async value"
+  },
+  "Mock Verify": {
+    "prefix": "mverify",
+    "body": [
+      "${1:mockName}.Verify(x => x.${2:Method}(${3:It.IsAny<Type>()}), Times.${4:Once});$0"
+    ],
+    "description": "Verifies a method was called on the Mock"
+  }
+}

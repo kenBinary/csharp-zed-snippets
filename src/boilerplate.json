@@ -1,0 +1,218 @@
+{
+  "C# Class": {
+    "prefix": "bp_class",
+    "body": [
+      "namespace ${1:Namespace}",
+      "{",
+      "    public class ${2:ClassName}",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# class"
+  },
+  "C# Interface": {
+    "prefix": "bp_interface",
+    "body": [
+      "namespace ${1:Namespace}",
+      "{",
+      "    public interface ${2:InterfaceName}",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# interface"
+  },
+  "C# Struct": {
+    "prefix": "bp_struct",
+    "body": [
+      "namespace ${1:Namespace}",
+      "{",
+      "    public struct ${2:StructName}",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# struct"
+  },
+  "C# Enum": {
+    "prefix": "bp_enum",
+    "body": [
+      "namespace ${1:Namespace}",
+      "{",
+      "    public enum ${2:EnumName}",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# enum"
+  },
+  "C# API Controller": {
+    "prefix": "bp_apicontroller",
+    "body": [
+      "using Microsoft.AspNetCore.Mvc;",
+      "",
+      "namespace ${1:Namespace}",
+      "{",
+      "    [ApiController]",
+      "    [Route(\"api/[controller]\")]",
+      "    public class ${2:NewApiController} : ControllerBase",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# API Controller"
+  },
+  "C# MVC Controller": {
+    "prefix": "bp_controller",
+    "body": [
+      "using System;",
+      "using System.Collections.Generic;",
+      "using System.Diagnostics;",
+      "using System.Linq;",
+      "using System.Threading.Tasks;",
+      "using Microsoft.AspNetCore.Mvc;",
+      "using Microsoft.Extensions.Logging;",
+      "",
+      "namespace ${1:Namespace}",
+      "{",
+      "    [Route(\"[controller]\")]",
+      "    public class ${2:NewController} : Controller",
+      "    {",
+      "        private readonly ILogger<${2:NewController}> _logger;",
+      "",
+      "        public ${2:NewController}(ILogger<${2:NewController}> logger)",
+      "        {",
+      "            _logger = logger;",
+      "        }",
+      "",
+      "        public IActionResult Index()",
+      "        {",
+      "            return View();",
+      "        }",
+      "",
+      "        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]",
+      "        public IActionResult Error()",
+      "        {",
+      "            return View(\"Error!\");",
+      "        }",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# MVC Controller"
+  },
+  "Razor Page": {
+    "prefix": "bp_razorpage",
+    "body": [
+      "@page",
+      "@model ${1:Namespace}.${2:PageName}Model",
+      "@{",
+      "    ViewData[\"Title\"] = \"${2:PageName}\";",
+      "}",
+      "",
+      "<h1>@ViewData[\"Title\"]</h1>",
+      "",
+      "<div>",
+      "    $0",
+      "</div>"
+    ],
+    "description": "Boilerplate for a new Razor Page"
+  },
+  "C# Razor PageModel": {
+    "prefix": "bp_pagemodel",
+    "body": [
+      "using Microsoft.AspNetCore.Mvc.RazorPages;",
+      "using Microsoft.Extensions.Logging;",
+      "",
+      "namespace ${1:Namespace}",
+      "{",
+      "    public class ${2:PageName}Model : PageModel",
+      "    {",
+      "        private readonly ILogger<${2:PageName}Model> _logger;",
+      "",
+      "        public ${2:PageName}Model(ILogger<${2:PageName}Model> logger)",
+      "        {",
+      "            _logger = logger;",
+      "        }",
+      "",
+      "        public void OnGet()",
+      "        {",
+      "            $0",
+      "        }",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new C# Razor PageModel"
+  },
+  "MSTest Class": {
+    "prefix": "bp_mstest",
+    "body": [
+      "using Microsoft.VisualStudio.TestTools.UnitTesting;",
+      "",
+      "namespace ${1:Namespace}",
+      "{",
+      "    [TestClass]",
+      "    public class ${2:NewMSTest}",
+      "    {",
+      "        [TestMethod]",
+      "        public void ${3:TestMethod1}()",
+      "        {",
+      "            Assert.IsTrue(true);",
+      "            $0",
+      "        }",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new MSTest class"
+  },
+  "NUnit Class": {
+    "prefix": "bp_nunit",
+    "body": [
+      "using NUnit.Framework;",
+      "",
+      "namespace ${1:Namespace}",
+      "{",
+      "    public class ${2:NewNUnit}",
+      "    {",
+      "        [SetUp]",
+      "        public void Setup()",
+      "        {",
+      "        }",
+      "",
+      "        [Test]",
+      "        public void ${3:Test1}()",
+      "        {",
+      "            Assert.Pass();",
+      "            $0",
+      "        }",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new NUnit class"
+  },
+  "xUnit Class": {
+    "prefix": "bp_xunit",
+    "body": [
+      "using Xunit;",
+      "",
+      "namespace ${1:Namespace}",
+      "{",
+      "    public class ${2:NewXUnit}",
+      "    {",
+      "        [Fact]",
+      "        public void ${3:Test1}()",
+      "        {",
+      "            Assert.True(true);",
+      "            $0",
+      "        }",
+      "    }",
+      "}"
+    ],
+    "description": "Boilerplate for a new xUnit class"
+  }
+}
