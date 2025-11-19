@@ -195,6 +195,83 @@
     ],
     "description": "Basic xUnit test class with constructor setup"
   },
+  "CQRS Command": {
+    "prefix": "cqrs_command",
+    "body": [
+      "public class ${1:Create}${2:Entity}Command : IRequest<${3:int}>",
+      "{",
+      "\tpublic ${4:string} ${5:Name} { get; set; }",
+      "}$0"
+    ],
+    "description": "Creates a CQRS command with MediatR IRequest"
+  },
+  "CQRS Command Handler": {
+    "prefix": "cqrs_handler",
+    "body": [
+      "public class ${1:Create}${2:Entity}CommandHandler : IRequestHandler<${1}${2}Command, ${3:int}>",
+      "{",
+      "\tprivate readonly ${4:IApplicationDbContext} _context;",
+      "",
+      "\tpublic ${1}${2}CommandHandler(${4} context)",
+      "\t{",
+      "\t\t_context = context;",
+      "\t}",
+      "",
+      "\tpublic async Task<${3}> Handle(${1}${2}Command request, CancellationToken cancellationToken)",
+      "\t{",
+      "\t\t$0",
+      "\t\treturn default;",
+      "\t}",
+      "}"
+    ],
+    "description": "Creates a CQRS command handler with MediatR"
+  },
+  "CQRS Query": {
+    "prefix": "cqrs_query",
+    "body": [
+      "public class Get${1:Entity}${2:ById}Query : IRequest<${3:EntityDto}>",
+      "{",
+      "\tpublic ${4:int} ${5:Id} { get; set; }",
+      "}$0"
+    ],
+    "description": "Creates a CQRS query with MediatR IRequest"
+  },
+  "CQRS Query Handler": {
+    "prefix": "cqrs_query_handler",
+    "body": [
+      "public class Get${1:Entity}${2:ById}QueryHandler : IRequestHandler<Get${1}${2}Query, ${3:EntityDto}>",
+      "{",
+      "\tprivate readonly ${4:IApplicationDbContext} _context;",
+      "",
+      "\tpublic Get${1}${2}QueryHandler(${4} context)",
+      "\t{",
+      "\t\t_context = context;",
+      "\t}",
+      "",
+      "\tpublic async Task<${3}> Handle(Get${1}${2}Query request, CancellationToken cancellationToken)",
+      "\t{",
+      "\t\t$0",
+      "\t\treturn default;",
+      "\t}",
+      "}"
+    ],
+    "description": "Creates a CQRS query handler with MediatR"
+  },
+  "CQRS Command with Validation": {
+    "prefix": "cqrs_command_validator",
+    "body": [
+      "public class ${1:Create}${2:Entity}CommandValidator : AbstractValidator<${1}${2}Command>",
+      "{",
+      "\tpublic ${1}${2}CommandValidator()",
+      "\t{",
+      "\t\tRuleFor(x => x.${3:Name})",
+      "\t\t\t.NotEmpty().WithMessage(\"${3} is required.\");",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Creates a FluentValidation validator for CQRS command"
+  },
   "Class": {
     "prefix": "class",
     "body": ["public class ${1:ClassName}", "{", "\t$0", "}"],
@@ -224,6 +301,18 @@
       "}"
     ],
     "description": "Create an async method"
+  },
+  "Interface Method": {
+    "prefix": "imethod",
+    "body": ["${1:void} ${2:MethodName}($3);$0"],
+    "description": "Create an interface method"
+  },
+  "Interface Async Method": {
+    "prefix": "imethod_async",
+    "body": [
+      "Task${1:<${2:T}>} ${3:MethodName}Async($4, CancellationToken cancellationToken = default);$0"
+    ],
+    "description": "Create an interface async method"
   },
   "Constructor": {
     "prefix": "ctor",
