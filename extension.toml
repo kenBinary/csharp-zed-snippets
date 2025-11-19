@@ -4,5 +4,5 @@ version = "0.0.0"
 schema_version = 1
 authors = ["Kenneth Joshua Becaro <joshuabecaro@gmail.com>"]
 description = "C# snippets for Zed IDE."
-repository = "" TODO
-snippets = "" TODO
+repository = "https://github.com/kenBinary/csharp-zed-snippets"
+snippets = "./snippets/csharp.json"
