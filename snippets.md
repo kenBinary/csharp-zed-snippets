@@ -4,37 +4,39 @@ A collection of C# snippets for the Zed editor.
 
 ## General
 
-| Prefix         | Description                           |
-| -------------- | ------------------------------------- |
-| `class`        | Create a new class                    |
-| `record`       | Creates a C# record declaration.      |
-| `interface`    | Create a new interface                |
-| `method`       | Create a method                       |
-| `method_async` | Create an async method                |
-| `ctor`         | Create a constructor                  |
-| `prop`         | Create an auto-property               |
-| `propfull`     | Create a property with backing field  |
-| `propread`     | Create a read-only auto-property      |
-| `propprivate`  | Create a property with private setter |
-| `for`          | Create a for loop                     |
-| `foreach`      | Create a foreach loop                 |
-| `while`        | Create a while loop                   |
-| `dowhile`      | Create a do-while loop                |
-| `if`           | Create an if statement                |
-| `elseif`       | Create an else-if statement           |
-| `ifelse`       | Create an if-else statement           |
-| `switch`       | Create a switch statement             |
-| `try`          | Create a try-catch block              |
-| `tryf`         | Create a try-catch-finally block      |
-| `using`        | Create a using statement              |
-| `namespace`    | Create a namespace                    |
-| `enum`         | Create an enum                        |
-| `struct`       | Create a struct                       |
-| `static`       | Create a static class                 |
-| `abstract`     | Create an abstract class              |
-| `cw`           | Console.WriteLine                     |
-| `throw`        | Throw an exception                    |
-| `ternary`      | Ternary conditional operator          |
+| Prefix          | Description                           |
+| --------------- | ------------------------------------- |
+| `class`         | Create a new class                    |
+| `record`        | Creates a C# record declaration.      |
+| `interface`     | Create a new interface                |
+| `method`        | Create a method                       |
+| `method_async`  | Create an async method                |
+| `imethod`       | Create an interface method            |
+| `imethod_async` | Create an interface async method      |
+| `ctor`          | Create a constructor                  |
+| `prop`          | Create an auto-property               |
+| `propfull`      | Create a property with backing field  |
+| `propread`      | Create a read-only auto-property      |
+| `propprivate`   | Create a property with private setter |
+| `for`           | Create a for loop                     |
+| `foreach`       | Create a foreach loop                 |
+| `while`         | Create a while loop                   |
+| `dowhile`       | Create a do-while loop                |
+| `if`            | Create an if statement                |
+| `elseif`        | Create an else-if statement           |
+| `ifelse`        | Create an if-else statement           |
+| `switch`        | Create a switch statement             |
+| `try`           | Create a try-catch block              |
+| `tryf`          | Create a try-catch-finally block      |
+| `using`         | Create a using statement              |
+| `namespace`     | Create a namespace                    |
+| `enum`          | Create an enum                        |
+| `struct`        | Create a struct                       |
+| `static`        | Create a static class                 |
+| `abstract`      | Create an abstract class              |
+| `cw`            | Console.WriteLine                     |
+| `throw`         | Throw an exception                    |
+| `ternary`       | Ternary conditional operator          |
 
 ## Boilerplate
 
@@ -69,6 +71,16 @@ A collection of C# snippets for the Zed editor.
 | `addscoped`    | Registers a scoped service in Program.cs.                     |
 | `addsingleton` | Registers a singleton service in Program.cs.                  |
 | `addtransient` | Registers a transient service in Program.cs.                  |
+
+## CQRS
+
+| Prefix                   | Description                                      |
+| ------------------------ | ------------------------------------------------ |
+| `cqrs_command`           | Creates a CQRS command with MediatR IRequest     |
+| `cqrs_handler`           | Creates a CQRS command handler with MediatR      |
+| `cqrs_query`             | Creates a CQRS query with MediatR IRequest       |
+| `cqrs_query_handler`     | Creates a CQRS query handler with MediatR        |
+| `cqrs_command_validator` | Creates a FluentValidation validator for command |
 
 ## Testing
 
