@@ -149,10 +149,9 @@ The snippets are organized in the `src/` directory by category for easier mainte
 
 To combine all snippet files into the final `snippets/csharp.json` file used by Zed, run:
 
-- **Windows (PowerShell)**: `.\combine.ps1`
-- **Unix/Linux/macOS**: `./combine.sh`
+`node src/combine.js`
 
-The `src/combine.js` script is used by these shell scripts to merge all category files into a single snippet file. Always run the appropriate combine script after making changes to any files in the `src/` directory.
+The `src/combine.js` script is used by these shell scripts to merge all category files into a single snippet file. Always run the combine script after making changes to any files in the `src/` directory.
 
 ## License
 
