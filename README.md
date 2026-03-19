@@ -16,9 +16,15 @@ A collection of C# code snippets for the [Zed](https://zed.dev/) editor.
 ### Manual Installation
 
 1. Clone this repository
-2. Go to Extensions menu in Zed IDE
+2. Go to Extensions menu in Zed
 3. Click "Install Dev Extension"
 4. Select the cloned folder e.g. (csharp-zed-snippets)
+
+### Installation Through Zed
+
+1. Go to Extensions menu in Zed
+2. Search for C# Snippets
+3. Install
 
 ## Usage
 
